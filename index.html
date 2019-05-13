@@ -84,27 +84,45 @@
     // const block = document.getElementsByClassName('myDiv')[0];
     const topDiv = document.getElementsByClassName('topSquare')[0];
 
-    const blockObj = {
-        height: 100,
-        active: true
-    };
+    // const blockObj = {
+    //     height: 100,
+    //     active: true
+    // };
+
+    const blockObj = [
+        { active: false },
+        { active: false },
+        { active: false },
+        { active: false },
+        { active: false },
+        { active: false },
+    ]
 
     const block = document.getElementsByClassName('myDiv');
-    for (let i = 0; i < block.length; i++) {
-        block[i].addEventListener("click", changeColor);
-    }
+
+    function addClickListener(i) {
+        // for (let i = 0; i < block.length; i++) {
+            block[i].addEventListener("click", function() {
+                if (blockObj[i].active === true) {
+                    topDiv.style.backgroundColor = 'green';
+                } else {
+                    topDiv.style.backgroundColor = 'red';
+                }
+            });
+        }
+    // }
 
     //listen for a click on the 'block' div and change color if active = true, and change to another if active = false 
     // block.addEventListener("click", changeColor);
 
     // do i need the active state? can i use if height > 100?
-    function changeColor() {
-        if (blockObj.active === true) {
-            topDiv.style.backgroundColor = 'green';
-        } else {
-            topDiv.style.backgroundColor = 'red';
-        }
-    };
+    // function changeColor() {
+    //     if (blockObj[i].active === true) {
+    //         topDiv.style.backgroundColor = 'green';
+    //     } else {
+    //         topDiv.style.backgroundColor = 'red';
+    //     }
+    // };
 
     // shrink will move the div back to 0px and update the blockObj active prop to false. Clicking on the div in that state will change its color.
     // setInterval will run grow again.
@@ -139,7 +157,58 @@
     // call setInterval function to start the program. Make grow() run every 4 seconds
     // setInterval(grow, 3000);
 
+    // for (let i = 0; i < block.length; i++) {
+    //     grow(i);
+    // }
+
     // or make an array holding specific interval values [1500, 2000, 3000, 4000]
+
+
+    
+    // create function that will iterate through the block array
+    // iterate through the block array
+    // for each div, call the grow() function on it
+        // grow() will translateY this div
+        // update active property to true
+        // call shrink() after a random setTimeout   
+    // shrink() will translateY this div back to its original value
+    // update active property to false
+    // setInterval for the first function
+    function lower(i) {
+        block[i].style.transform = "translateY(0px)";
+        blockObj[i].active = false;
+        console.log(blockObj[i]);
+    }
+
+    function raise(i) {
+        addClickListener(i);
+        block[i].style.transform = "translateY(-200px)";
+        blockObj[i].active = true;
+        console.log(blockObj[i]);
+        setTimeout(lower, random(1000, 3000), i);
+    }
+
+    // https://stackoverflow.com/questions/3583724/how-do-i-add-a-delay-in-a-javascript-loop
+    let i = 0;
+
+    function init() {
+        setTimeout(function() {
+            raise(i);
+            i++;
+            if (i < block.length) {
+                init();
+            };
+        }, random(1000, 3000))
+
+        i = 0;
+        // for (let i = 0; i < block.length; i++) {
+        //     raise(i);
+        // }
+    }     
+    
+    // setInterval(init, 4000);
+    
+
 
     </script>
 </body>
