@@ -34,7 +34,7 @@
             width: 100px;
             height: 100px;
             background-color: coral;
-            transition: .5s linear;
+            transition: .3s linear;
             border: 2px solid dodgerblue;
         }
 
@@ -185,7 +185,7 @@
         block[i].style.transform = "translateY(-200px)";
         blockObj[i].active = true;
         console.log(blockObj[i]);
-        setTimeout(lower, random(1000, 3000), i);
+        setTimeout(lower, random(2000, 4000), i);
     }
 
     // https://stackoverflow.com/questions/3583724/how-do-i-add-a-delay-in-a-javascript-loop
@@ -197,16 +197,19 @@
             i++;
             if (i < block.length) {
                 init();
-            };
-        }, random(1000, 3000))
+            } else {
+                i = 0;
+                init();
+            }
+        }, random(2000, 4000))
 
-        i = 0;
+        // i = 0;
         // for (let i = 0; i < block.length; i++) {
         //     raise(i);
         // }
     }     
     
-    // setInterval(init, 4000);
+    // setInterval(init, 3000);
     
 
 
