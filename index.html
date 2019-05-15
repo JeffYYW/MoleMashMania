@@ -5,58 +5,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Early Testing</title>
-
+    <link rel="stylesheet" href="styles/style.css">
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
 
 </head>
 <body>
     <style>
-        body {
-            background-color: lightgray;
-        }
+    h1, h2, h3 {
+        margin: 0;
+        padding: 0;
+    }
 
-        .topSquare {
-            height: 100px;
-            width: 100px;
-            background-color: gray;
-        }
+    body {
+        background-color: lightgray;
+    }
 
-        .container {
-            display: flex;
-            position: relative;
-            top: 200px;
-            left: 20%;
-            width: 800px;
-            height: 400px;
-            border: 2px solid dodgerblue;
+    header {
+        width: 100%;
+        height: 15vh;
+        display: flex;
+        justify-content: flex-end;
+    }
 
-        }
+    .topSquare {
+        height: 100px;
+        width: 100px;
+        background-color: gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-        .myDiv {
-            width: 100px;
-            height: 100px;
-            background-color: coral;
-            transition: .1s linear;
-            border: 2px solid dodgerblue;
-        }
+    .container {
+        display: flex;
+        position: relative;
+        width: 100%;
+        height: 80vh;
+        border: 2px solid dodgerblue;
 
+    }
+
+    .myDiv {
+        width: 100px;
+        height: 100px;
+        background-color: coral;
+        transition: .1s linear;
+        border: 2px solid dodgerblue;
+    }
+
+    .box1 {
+        position: absolute;
+        bottom: 10%;
+        left: 10%;
+    }
+
+    .box2 {
+        position: absolute;
+        top: 40%; 
+        left: 35%;
+    }
+
+    .box3 {
+        position: absolute;
+        top: 23%;
+        right: 17%;
+    }
+
+    .box4 {
+        position: absolute;           
+        top: 18%;
+        left: 15%;
+    }
+
+    .box5 {
+        position: absolute;            
+        top: 60%;
+        left: 55%;
+    }
+
+    .box6 {
+        position: absolute;
+        bottom: 5%;
+        right: 5%
+    }
     </style>
-    <div class="topSquare">
-        <h2></h2>
-    </div>
-
+    <header>
+        <div class="topSquare">
+            <h2>0</h2>
+        </div>
+    </header>
     <div class="container">
-        <div class="myDiv"></div>
-        <div class="myDiv"></div>
-        <div class="myDiv"></div>
-        <div class="myDiv"></div>
-        <div class="myDiv"></div>
-        <div class="myDiv"></div>
+        <div class="myDiv box1">1</div>
+        <div class="myDiv box2">2</div>
+        <div class="myDiv box3">3</div>
+        <div class="myDiv box4">4</div>
+        <div class="myDiv box5">5</div>
+        <div class="myDiv box6">6</div>
     </div>
 
     <script> 
-
-    
 
     const topDiv = document.getElementsByClassName('topSquare')[0];
 
@@ -71,10 +118,6 @@
 
     const block = document.getElementsByClassName('myDiv');
 
-    
-
-    
-  
     // create function that will iterate through an array (block) that will hold a list of divs that represent the moles
     // iterate through the array
     // for each div, call the raise() function on it
@@ -93,103 +136,90 @@
         var num = Math.floor(Math.random() * (max - min)) + min;
         return num;
     }
-
-    // function lowerOnClick(i) {
-    //     block[i].onclick = function() {
-    //         if (blockObj[i].active === true) {
-    //             lower(i);
-    //         }
-    //     }
-    // }
-
-    //listen for a click on the 'block' div and change color if active = true, and change to another if active = false 
-
-    // function colorChangeOnClick(i) {
-    //     block[i].addEventListener("click", function () {
-    //         if (blockObj[i].active === true) {
-    //             block[i].style.backgroundColor = 'green';
-    //             // lower(i);
-    //         } else {
-    //             block[i].style.backgroundColor = 'red';
-    //         }
-    //     });
-    // }
     
     let score = 0;
 
     function lower(i) {
-        // if (blockObj[i].active === true) {
             block[i].style.transform = "translateY(0px)";
             blockObj[i].active = false;
             block[i].style.backgroundColor = 'red';
             console.log(blockObj[i]);
-        // }
     }
 
     function raise(i) {
-        // colorChangeOnClick(i);
-        block[i].style.transform = "translateY(-200px)";
+        block[i].style.transform = "translateY(-150px)";
         blockObj[i].active = true;
         block[i].style.backgroundColor = 'green';
         // add event listener: if clicked and active === true, call lower(). else setTimeout and call lower()
         block[i].addEventListener("click", function () {
             if (blockObj[i].active === true) {
-                // block[i].style.backgroundColor = 'green';
                 score = score + 1;
                 $('.topSquare h2').html(score);
                 lower(i);
             }
-        })
-            
-        
-        // lowerOnClick(i);
+        })    
         console.log(blockObj[i]);
         setTimeout(lower, random(1000, 2000), i);
     }
 
     // https://stackoverflow.com/questions/3583724/how-do-i-add-a-delay-in-a-javascript-loop
-    let i = 0;
+
+    let i = 0;                              // initial value of i
 
     function init() {
         setTimeout(function() {             // set timeout to pause time between blocks being raised
             raise(i);                         
             i++;
-            if (i < block.length) {         // loop through all blocks and call raise() on each one
-                init();
-            } else if (score > 10) {
+            if (score === 100) {  
                 alert("You win!");
-                return
+                return      
+                
+            } else if (i < block.length) {   // loop through all blocks and call raise() on each one
+                init();
             } else {                        // once the block array reaches the end, counter is reset to 0 and init() function is called again to 
                 i = 0;                          // 'restart' the loop
                 init();
             }
         }, random(1000, 2500))
     }     
-    
-    //dont need set interval here
-    // setInterval(init, 2000);
-    init();
-    
+
+    //  dont need set interval here, but it seems to make the game faster and more random. else if i > ~30 setInterval(init, 2000);?
+        // setInterval(init, 4000);
+
+    // make lower() and raise() a shorter interval
+        // init();    
+
+
 
     </script>
 
     <!-- to do -->
+<!-- create new folder structure -->
+<!-- switch to jquery -->
 <!-- namespace -->
-<!-- onclick, lower() -->
-<!-- add game exit -->
-<!-- add game start -->
-<!-- add timer -->
+<!-- add game exit button -->
+<!-- add game start button. Onclick, run init() -->
+    
+
 <!-- add score counter -->
 <!-- style divs -->
 <!-- style background -->
 
 
+    <!-- complete -->
+<!-- onclick, lower() -->
+
     <!-- stretch -->
 <!-- randomize array -->
 <!-- make an array holding specific interval values? [1500, 2000, 3000, 4000] -->
+<!-- add timer -->
+<!-- count how many missed -->
+
+
     <!-- challenge -->
 <!-- getting the random timing -->
 <!-- resetting the counter to 0 and restarting the init loop -->
+
 </body>
 </html>
 
