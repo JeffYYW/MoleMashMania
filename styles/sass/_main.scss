@@ -1,0 +1,87 @@
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: lightgray;
+}
+
+header {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .commandButtons {
+        display: flex;
+        flex-direction: column;
+
+        button {
+            padding: 10px 10px;
+        }
+    }
+}
+
+.scoreContainer {
+    height: 50px;
+    width: 100px;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    border: 2px solid dodgerblue;
+
+}
+
+.myDiv {
+    width: 100px;
+    height: 100px;
+    background-color: coral;
+    transition: .1s linear;
+    border: 2px solid dodgerblue;
+}
+
+.box1 {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+}
+
+.box2 {
+    position: absolute;
+    top: 40%; 
+    left: 35%;
+}
+
+.box3 {
+    position: absolute;
+    top: 23%;
+    right: 17%;
+}
+
+.box4 {
+    position: absolute;           
+    top: 18%;
+    left: 15%;
+}
+
+.box5 {
+    position: absolute;            
+    top: 60%;
+    left: 55%;
+}
+
+.box6 {
+    position: absolute;
+    bottom: 5%;
+    right: 5%
+}
