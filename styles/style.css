@@ -240,15 +240,16 @@ header .commandButtons button {
   width: 100%;
   height: 80vh;
   border: 2px solid dodgerblue;
+  background-image: url("../assets/cartoon-grass.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.myDiv {
-  width: 100px;
-  height: 100px;
-  background-color: coral;
+.moleDiv {
+  width: 120px;
+  height: 120px;
   -webkit-transition: .1s linear;
   transition: .1s linear;
-  border: 2px solid dodgerblue;
 }
 
 .box1 {
@@ -285,4 +286,51 @@ header .commandButtons button {
   position: absolute;
   bottom: 5%;
   right: 5%;
+}
+
+img {
+  width: 120%;
+  height: 100%;
+  display: block;
+}
+
+.dirtMound {
+  width: 13%;
+  height: 20%;
+}
+
+.dirt1 {
+  position: absolute;
+  bottom: 9%;
+  left: 8%;
+}
+
+.dirt2 {
+  position: absolute;
+  top: 40%;
+  left: 32%;
+}
+
+.dirt3 {
+  position: absolute;
+  top: 23%;
+  right: 14%;
+}
+
+.dirt4 {
+  position: absolute;
+  top: 18%;
+  left: 12%;
+}
+
+.dirt5 {
+  position: absolute;
+  top: 60%;
+  left: 51%;
+}
+
+.dirt6 {
+  position: absolute;
+  bottom: 5%;
+  right: 4%;
 }

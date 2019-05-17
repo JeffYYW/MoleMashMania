@@ -21,7 +21,7 @@ const blockObj = [
     { active: false },
 ]
 
-const block = document.getElementsByClassName('myDiv');
+const mole = document.getElementsByClassName('moleDiv');
 
 // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Timeouts_and_intervals#Active_learning_a_reaction_game 
 // #3
@@ -33,18 +33,18 @@ function random(min, max) {
 let score = 0;
 
 function lower(i) {
-    block[i].style.transform = "translateY(0px)";
+    mole[i].style.transform = "translateY(0px)";
     blockObj[i].active = false;
-    block[i].style.backgroundColor = 'red';
+    // block[i].style.backgroundColor = 'red';
     console.log(blockObj[i]);
 }
 
 function raise(i) {
-    block[i].style.transform = "translateY(-150px)";
+    mole[i].style.transform = "translateY(-80px)";
     blockObj[i].active = true;
-    block[i].style.backgroundColor = 'green';
+    // block[i].style.backgroundColor = 'green';
     // add event listener: if clicked and active === true, call lower(). else setTimeout and call lower()
-    block[i].addEventListener("click", function () {
+    mole[i].addEventListener("click", function () {
         if (blockObj[i].active === true) {
             score = score + 1;
             $('.scoreContainer h2').html(score);
@@ -58,26 +58,32 @@ function raise(i) {
 // https://stackoverflow.com/questions/3583724/how-do-i-add-a-delay-in-a-javascript-loop
 
 // add randomizer for i
-// const controlArray = [0, 1, 2, 3, 4, 5]
+
 // const randomArray = [0, 1, 2, 3, 4, 5]
 
-let i = 0;                              // initial value of i
 
+const controlArray = [0, 1, 2, 3, 4, 5]
+// let j = random(0,6);
+// console.log(j);
+// let i = 0;                              // initial value of i
+
+// because 'i' is getting a random value each time, i cannot do i++ to get to the end of the array
+    // so i have an array 'j' that is running 'parallel' to the 'i' array and 'j' will increase by 1 each time the loop is run. it will keep intended position of 'i' in it's array
 
 $(function () {
-
     function init() {
+        let i = random(0,6);                 // i is set to a random value between 0 and 6
         setTimeout(function () {             // set timeout to pause time between blocks being raised
-            raise(i);
-            i++;
+            raise(i);                        // call raise() on i which is a random value between 0 and 6
+            j++;                             // increase j counter by one. Control array length matches the div array length
             if (quit === true) {
                 alert("Game stopped! Press start to play again!");
                 return
 
-            } else if (i < block.length) {   // loop through all blocks and call raise() on each one
+            } else if (j < controlArray.length) {   // loop through div array. increase j by one until it reaches the end of the div array length
                 init();
-            } else {                        // once the block array reaches the end, counter is reset to 0 and init() function is called again to 
-                i = 0;                          // 'restart' the loop
+            } else {                        // once the block array reaches the end, j counter is reset to 0 and init() function is called again to 
+                j = 0;                          // 'restart' the loop
                 init();
             }
         }, random(1000, 1500))
@@ -91,7 +97,7 @@ $(function () {
         // init();    
     $('.startButton').on("click", function () {
         quit = false;
-        i = 0;
+        j = 0;
         $('.scoreContainer h2').html(0);
         init();
     })
