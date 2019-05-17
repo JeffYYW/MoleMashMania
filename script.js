@@ -44,19 +44,21 @@ function raise(i) {
     mole[i].style.visibility = 'visible';
     mole[i].style.transform = "translateY(-80px)";
     blockObj[i].active = true;
-    
     // block[i].style.backgroundColor = 'green';
     // add event listener: if clicked and active === true, call lower(). else setTimeout and call lower()
     mole[i].addEventListener("click", function () {
         if (blockObj[i].active === true) {
             score = score + 1;
-            $('.scoreContainer h2').html(score);
+            $('.scoreContainer h2 span').html(score);
             lower(i);
         }
     })
     console.log(blockObj[i]);
     setTimeout(lower, random(1000, 1200), i);
 }
+
+
+    
 
 // https://stackoverflow.com/questions/3583724/how-do-i-add-a-delay-in-a-javascript-loop
 
@@ -96,7 +98,7 @@ $(function () {
     $('.startButton').on("click", function () {
         quit = false;
         // j = 0;
-        $('.scoreContainer h2').html(0);
+        $('.scoreContainer h2 span').html(0);
         init();
     })
 

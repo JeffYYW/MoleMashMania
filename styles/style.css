@@ -190,7 +190,7 @@ body {
 
 header {
   width: 100%;
-  height: 20vh;
+  height: 25vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -201,26 +201,33 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: -webkit-gradient(linear, left bottom, left top, from(#87CEFA), to(#00BFFF));
+  background: linear-gradient(to top, #87CEFA, #00BFFF);
 }
 
 header .commandButtons {
+  margin-top: 2%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 30%;
 }
 
 header .commandButtons button {
-  padding: 10px 10px;
+  border: none;
+  border-radius: 100px;
+  background-color: #D47D70;
+  padding: 20px 35px;
+  -webkit-box-shadow: 5px 5px 5px #2e2d2c;
+          box-shadow: 5px 5px 5px #2e2d2c;
 }
 
 .scoreContainer {
   height: 50px;
-  width: 100px;
-  background-color: gray;
+  width: 15%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -230,6 +237,12 @@ header .commandButtons button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  white-space: nowrap;
+  margin-top: 2%;
+}
+
+.scoreContainer h2 {
+  font-size: 30px;
 }
 
 .container {
@@ -238,34 +251,38 @@ header .commandButtons button {
   display: flex;
   position: relative;
   width: 100%;
-  height: 80vh;
-  border: 2px solid dodgerblue;
+  height: 75vh;
   background-image: url("../assets/cartoon-grass.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  cursor: url("../assets/mallet-icon.png"), pointer;
 }
 
 img {
   width: 100%;
   height: 100%;
   display: block;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .moleDiv {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 130px;
   -webkit-transition: .1s linear;
   transition: .1s linear;
   position: absolute;
   left: 32%;
-  background-color: coral;
+  top: -13%;
+  visibility: hidden;
 }
 
 .dirtMound {
   width: 110%;
-  height: 140%;
+  height: 120%;
   position: absolute;
-  border: 2px solid red;
 }
 
 .itemSet1 {
