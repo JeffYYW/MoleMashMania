@@ -36,12 +36,15 @@ function lower(i) {
     mole[i].style.transform = "translateY(0px)";
     blockObj[i].active = false;
     // block[i].style.backgroundColor = 'red';
+    mole[i].style.visibility = 'hidden';
     console.log(blockObj[i]);
 }
 
 function raise(i) {
+    mole[i].style.visibility = 'visible';
     mole[i].style.transform = "translateY(-80px)";
     blockObj[i].active = true;
+    
     // block[i].style.backgroundColor = 'green';
     // add event listener: if clicked and active === true, call lower(). else setTimeout and call lower()
     mole[i].addEventListener("click", function () {
@@ -62,7 +65,7 @@ function raise(i) {
 // const randomArray = [0, 1, 2, 3, 4, 5]
 
 
-const controlArray = [0, 1, 2, 3, 4, 5]
+// const controlArray = [0, 1, 2, 3, 4, 5]
 // let j = random(0,6);
 // console.log(j);
 // let i = 0;                              // initial value of i
@@ -75,16 +78,11 @@ $(function () {
         let i = random(0,6);                 // i is set to a random value between 0 and 6
         setTimeout(function () {             // set timeout to pause time between blocks being raised
             raise(i);                        // call raise() on i which is a random value between 0 and 6
-            j++;                             // increase j counter by one. Control array length matches the div array length
             if (quit === true) {
                 alert("Game stopped! Press start to play again!");
                 return
-
-            } else if (j < controlArray.length) {   // loop through div array. increase j by one until it reaches the end of the div array length
-                init();
-            } else {                        // once the block array reaches the end, j counter is reset to 0 and init() function is called again to 
-                j = 0;                          // 'restart' the loop
-                init();
+            } else {                              
+                init()                      // function calls itself again with a new random number out of the array
             }
         }, random(1000, 1500))
     }
@@ -97,7 +95,7 @@ $(function () {
         // init();    
     $('.startButton').on("click", function () {
         quit = false;
-        j = 0;
+        // j = 0;
         $('.scoreContainer h2').html(0);
         init();
     })
@@ -108,3 +106,22 @@ $(function () {
     })
 });
     
+
+
+// function init() {
+//     let i = random(0, 6);                 // i is set to a random value between 0 and 6
+//     setTimeout(function () {             // set timeout to pause time between blocks being raised
+//         raise(i);                        // call raise() on i which is a random value between 0 and 6
+//         j++;                             // increase j counter by one. Control array length matches the div array length
+//         if (quit === true) {
+//             alert("Game stopped! Press start to play again!");
+//             return
+
+//         } else if (j < controlArray.length) {   // loop through div array. increase j by one until it reaches the end of the div array length
+//             init();
+//         } else {                        // once the block array reaches the end, j counter is reset to 0 and init() function is called again to 
+//             j = 0;                          // 'restart' the loop
+//             init();
+//         }
+//     }, random(1000, 1500))
+// }

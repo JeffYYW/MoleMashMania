@@ -245,92 +245,73 @@ header .commandButtons button {
   background-size: cover;
 }
 
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .moleDiv {
   width: 120px;
   height: 120px;
   -webkit-transition: .1s linear;
   transition: .1s linear;
-}
-
-.box1 {
   position: absolute;
-  bottom: 10%;
-  left: 10%;
-}
-
-.box2 {
-  position: absolute;
-  top: 40%;
-  left: 35%;
-}
-
-.box3 {
-  position: absolute;
-  top: 23%;
-  right: 17%;
-}
-
-.box4 {
-  position: absolute;
-  top: 18%;
-  left: 15%;
-}
-
-.box5 {
-  position: absolute;
-  top: 60%;
-  left: 55%;
-}
-
-.box6 {
-  position: absolute;
-  bottom: 5%;
-  right: 5%;
-}
-
-img {
-  width: 120%;
-  height: 100%;
-  display: block;
+  left: 32%;
+  background-color: coral;
 }
 
 .dirtMound {
-  width: 13%;
+  width: 110%;
+  height: 140%;
+  position: absolute;
+  border: 2px solid red;
+}
+
+.itemSet1 {
+  position: absolute;
+  top: 16%;
+  left: 5%;
+  width: 20%;
   height: 20%;
 }
 
-.dirt1 {
+.itemSet2 {
   position: absolute;
-  bottom: 9%;
-  left: 8%;
+  top: 31%;
+  left: 29%;
+  width: 20%;
+  height: 20%;
 }
 
-.dirt2 {
+.itemSet3 {
   position: absolute;
-  top: 40%;
-  left: 32%;
+  top: 50%;
+  left: 50%;
+  width: 20%;
+  height: 20%;
 }
 
-.dirt3 {
+.itemSet4 {
   position: absolute;
-  top: 23%;
-  right: 14%;
-}
-
-.dirt4 {
-  position: absolute;
-  top: 18%;
+  top: 63%;
   left: 12%;
+  width: 20%;
+  height: 20%;
 }
 
-.dirt5 {
+.itemSet5 {
   position: absolute;
-  top: 60%;
-  left: 51%;
+  top: 17%;
+  right: 9%;
+  width: 20%;
+  height: 20%;
 }
 
-.dirt6 {
+.itemSet6 {
   position: absolute;
-  bottom: 5%;
+  bottom: 10%;
   right: 4%;
+  width: 20%;
+  height: 20%;
 }
