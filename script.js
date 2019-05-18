@@ -22,6 +22,8 @@ const blockObj = [
 ]
 
 const mole = document.getElementsByClassName('moleDiv');
+// const items = document.getElementsByClassName('itemSet');
+
 
 // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Timeouts_and_intervals#Active_learning_a_reaction_game 
 // #3
@@ -34,7 +36,10 @@ let score = 0;
 
 function lower(i) {
     mole[i].style.transform = "translateY(0px)";
+    mole[i].style.height = "117%";
     blockObj[i].active = false;
+    // items[i].querySelector('.scoreScroll').style.transform = "none";
+    // items[i].querySelector('.scoreScroll').style.opacity = "1";
     // block[i].style.backgroundColor = 'red';
     mole[i].style.visibility = 'hidden';
     console.log(blockObj[i]);
@@ -43,11 +48,14 @@ function lower(i) {
 function raise(i) {
     mole[i].style.visibility = 'visible';
     mole[i].style.transform = "translateY(-80px)";
+    mole[i].style.height = "145%";
     blockObj[i].active = true;
     // block[i].style.backgroundColor = 'green';
     // add event listener: if clicked and active === true, call lower(). else setTimeout and call lower()
     mole[i].addEventListener("click", function () {
         if (blockObj[i].active === true) {
+            // items[i].querySelector('.scoreScroll').style.transform = "translateY(-80px)";
+            // items[i].querySelector('.scoreScroll').style.opacity = "0";
             score = score + 1;
             $('.scoreContainer h2 span').html(score);
             lower(i);
@@ -58,7 +66,25 @@ function raise(i) {
 }
 
 
-    
+// let count = 30;
+
+// function startTimer() {
+//     setInterval(timer, 1000);
+// }
+
+// function timer() {
+//     count = count - 1;
+//     document.getElementById('timer').innerHTML = count;
+// }
+
+// function stopTimer() {
+//     clearInterval(counter);
+// }
+
+
+
+
+    // https://stackoverflow.com/questions/1191865/code-for-a-simple-javascript-countdown-timer
 
 // https://stackoverflow.com/questions/3583724/how-do-i-add-a-delay-in-a-javascript-loop
 
@@ -83,6 +109,10 @@ $(function () {
             if (quit === true) {
                 alert("Game stopped! Press start to play again!");
                 return
+                
+            // } else if (count === 0) {
+            //     alert("Time up!");
+            //     return
             } else {                              
                 init()                      // function calls itself again with a new random number out of the array
             }
@@ -105,6 +135,8 @@ $(function () {
     quit = false;
     $('.quitButton').on("click", function () {
         quit = true;
+        return
+        // $('.scoreContainer h2 span').html(0);
     })
 });
     

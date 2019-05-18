@@ -206,7 +206,6 @@ header {
 }
 
 header .commandButtons {
-  margin-top: 2%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -227,13 +226,13 @@ header .commandButtons button {
 
 .scoreContainer {
   height: 50px;
-  width: 15%;
+  width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -242,6 +241,10 @@ header .commandButtons button {
 }
 
 .scoreContainer h2 {
+  font-size: 30px;
+}
+
+.scoreContainer #timer {
   font-size: 30px;
 }
 
@@ -255,7 +258,7 @@ header .commandButtons button {
   background-image: url("../assets/cartoon-grass.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  cursor: url("../assets/mallet-icon.png"), pointer;
+  cursor: url("../assets/mallet-icon.png"), auto;
 }
 
 img {
@@ -269,14 +272,13 @@ img {
 }
 
 .moleDiv {
-  width: 150px;
-  height: 130px;
+  width: 62%;
+  height: 117%;
   -webkit-transition: .1s linear;
   transition: .1s linear;
   position: absolute;
   left: 32%;
   top: -13%;
-  visibility: hidden;
 }
 
 .dirtMound {
@@ -287,23 +289,23 @@ img {
 
 .itemSet1 {
   position: absolute;
-  top: 16%;
-  left: 5%;
+  top: 14%;
+  left: 9%;
   width: 20%;
   height: 20%;
 }
 
 .itemSet2 {
   position: absolute;
-  top: 31%;
-  left: 29%;
+  top: 27%;
+  left: 31%;
   width: 20%;
   height: 20%;
 }
 
 .itemSet3 {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   width: 20%;
   height: 20%;
@@ -328,7 +330,7 @@ img {
 .itemSet6 {
   position: absolute;
   bottom: 10%;
-  right: 4%;
+  right: 13%;
   width: 20%;
   height: 20%;
 }

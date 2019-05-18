@@ -19,7 +19,7 @@ header {
     background: linear-gradient(to top, #87CEFA, #00BFFF);
 
     .commandButtons {
-        margin-top: 2%;
+        // margin-top: 1%;
         display: flex;
         justify-content: space-between;
         // border: 2px solid red;
@@ -40,15 +40,21 @@ header {
 
 .scoreContainer {
     height: 50px;
-    width: 15%;
+    width: 90%;
     // background-color: gray;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     white-space: nowrap;
     margin-top: 2%;
+    // border: 2px solid blue;
 
     h2 {
+        font-size: 30px;
+    }
+
+    #timer {
+        // border: 2px solid red;
         font-size: 30px;
     }
 }
@@ -62,7 +68,7 @@ header {
     background-image: url('../assets/cartoon-grass.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    cursor: url('../assets/mallet-icon.png'), pointer;
+    cursor: url('../assets/mallet-icon.png'), auto;
 }
 
 img {
@@ -73,15 +79,29 @@ img {
 }
 
 .moleDiv {
-    width: 150px;
-    height: 130px;
+    // width: 150px;
+    // height: 130px;
+    width: 62%;
+    height: 117%;
     transition: .1s linear;
     position: absolute;
     left: 32%;
     top: -13%;
     // background-color: coral;
-    visibility: hidden;
+    // visibility: hidden;
 }
+
+// .scoreScroll {
+//     z-index: 100;
+//     width: 50px;
+//     height: 50px;
+//     position: absolute;
+//     left: 50%;
+//     transition: 0.8s linear;
+//     opacity: 1;
+//     border: 2px solid red;
+//     visibility: visible;
+// }
 
 .dirtMound {
     width: 110%;
@@ -92,8 +112,8 @@ img {
 
 .itemSet1 {
     position: absolute;
-    top: 16%;
-    left: 5%;
+    top: 14%;
+    left: 9%;
     width: 20%;
     height: 20%;
     // border: 2px solid red;
@@ -101,8 +121,8 @@ img {
 
 .itemSet2 {
     position: absolute;
-    top: 31%;
-    left: 29%;
+    top: 27%;
+    left: 31%;
     width: 20%;
     height: 20%;
     // border: 2px solid red;
@@ -110,7 +130,7 @@ img {
 
 .itemSet3 {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     width: 20%;
     height: 20%;
@@ -138,9 +158,16 @@ img {
 .itemSet6 {
     position: absolute;
     bottom: 10%;
-    right: 4%;
+    right: 13%;
     width: 20%;
     height: 20%;
     // border: 2px solid red;
 }
 
+// @media all and (orientation: portrait) { 
+//     body { -webkit-transform: rotate(90deg);
+//          -moz-transform: rotate(90deg);
+//           -ms-transform: rotate(90deg);
+//            -o-transform: rotate(90deg);
+//             transform: rotate(90deg); } 
+// }
