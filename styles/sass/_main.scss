@@ -34,6 +34,10 @@ header {
             padding: 20px 35px;
             box-shadow: 5px 5px 5px rgb(46, 45, 44);
         }
+
+        button:focus {
+            background-color: #fff;
+        }
     }
 }
 
@@ -91,6 +95,7 @@ img {
     // visibility: hidden;
 }
 
+
 // .scoreScroll {
 //     z-index: 100;
 //     width: 50px;
@@ -110,57 +115,57 @@ img {
     // border: 2px solid red;
 }
 
-.itemSet1 {
+.itemSet {
     position: absolute;
-    top: 14%;
-    left: 9%;
     width: 20%;
     height: 20%;
+}
+
+.itemSet1 {
+    
+    top: 14%;
+    left: 9%;
+    
     // border: 2px solid red;
 }
 
 .itemSet2 {
-    position: absolute;
+    
     top: 27%;
     left: 31%;
-    width: 20%;
-    height: 20%;
+    
     // border: 2px solid red;
 }
 
 .itemSet3 {
-    position: absolute;
+    
     top: 45%;
     left: 50%;
-    width: 20%;
-    height: 20%;
+    
     // border: 2px solid red;
 }
 
 .itemSet4 {
-    position: absolute;
+    
     top: 63%; 
     left: 12%;
-    width: 20%;
-    height: 20%;
+    
     // border: 2px solid red;
 }
 
 .itemSet5 {
-    position: absolute;
+    
     top: 17%;
     right: 9%;
-    width: 20%;
-    height: 20%;
+    
     // border: 2px solid red;
 }
 
 .itemSet6 {
-    position: absolute;
+    
     bottom: 10%;
     right: 13%;
-    width: 20%;
-    height: 20%;
+    
     // border: 2px solid red;
 }
 
@@ -171,3 +176,84 @@ img {
 //            -o-transform: rotate(90deg);
 //             transform: rotate(90deg); } 
 // }
+
+@media (max-width: 768px) {
+    .moleDiv {
+        width: 80%;
+        left: 25%;
+    }
+
+    .dirtMound {
+        width: 120%;
+    }
+}
+
+@media (max-width: 426px) {
+    
+    header {
+        .commandButtons {
+            width: 70%;
+        }
+    }
+
+    .moleDiv {
+        width: 80%;
+        left: 25%;
+    }
+
+    .dirtMound {
+        width: 120%;
+    }
+
+    .itemSet {
+        position: absolute;
+        width: 30%;
+        height: 20%;
+    }
+
+    .itemSet1 {
+        top: 14%;
+        left: 9%;
+        // border: 2px solid red;
+    }
+
+    .itemSet2 {
+        
+        top: 27%;
+        left: 31%;
+        
+        // border: 2px solid red;
+    }
+
+    .itemSet3 {
+        
+        top: 45%;
+        left: 50%;
+        
+        // border: 2px solid red;
+    }
+
+    .itemSet4 {
+        
+        top: 63%; 
+        left: 12%;
+        
+        // border: 2px solid red;
+    }
+
+    .itemSet5 {
+        
+        top: 17%;
+        right: 9%;
+        
+        // border: 2px solid red;
+    }
+
+    .itemSet6 {
+        
+        bottom: 10%;
+        right: 13%;
+        
+        // border: 2px solid red;
+    }
+}

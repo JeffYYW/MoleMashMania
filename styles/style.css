@@ -224,6 +224,10 @@ header .commandButtons button {
           box-shadow: 5px 5px 5px #2e2d2c;
 }
 
+header .commandButtons button:focus {
+  background-color: #fff;
+}
+
 .scoreContainer {
   height: 50px;
   width: 90%;
@@ -287,50 +291,90 @@ img {
   position: absolute;
 }
 
-.itemSet1 {
+.itemSet {
   position: absolute;
-  top: 14%;
-  left: 9%;
   width: 20%;
   height: 20%;
+}
+
+.itemSet1 {
+  top: 14%;
+  left: 9%;
 }
 
 .itemSet2 {
-  position: absolute;
   top: 27%;
   left: 31%;
-  width: 20%;
-  height: 20%;
 }
 
 .itemSet3 {
-  position: absolute;
   top: 45%;
   left: 50%;
-  width: 20%;
-  height: 20%;
 }
 
 .itemSet4 {
-  position: absolute;
   top: 63%;
   left: 12%;
-  width: 20%;
-  height: 20%;
 }
 
 .itemSet5 {
-  position: absolute;
   top: 17%;
   right: 9%;
-  width: 20%;
-  height: 20%;
 }
 
 .itemSet6 {
-  position: absolute;
   bottom: 10%;
   right: 13%;
-  width: 20%;
-  height: 20%;
+}
+
+@media (max-width: 768px) {
+  .moleDiv {
+    width: 80%;
+    left: 25%;
+  }
+  .dirtMound {
+    width: 120%;
+  }
+}
+
+@media (max-width: 426px) {
+  header .commandButtons {
+    width: 70%;
+  }
+  .moleDiv {
+    width: 80%;
+    left: 25%;
+  }
+  .dirtMound {
+    width: 120%;
+  }
+  .itemSet {
+    position: absolute;
+    width: 30%;
+    height: 20%;
+  }
+  .itemSet1 {
+    top: 14%;
+    left: 9%;
+  }
+  .itemSet2 {
+    top: 27%;
+    left: 31%;
+  }
+  .itemSet3 {
+    top: 45%;
+    left: 50%;
+  }
+  .itemSet4 {
+    top: 63%;
+    left: 12%;
+  }
+  .itemSet5 {
+    top: 17%;
+    right: 9%;
+  }
+  .itemSet6 {
+    bottom: 10%;
+    right: 13%;
+  }
 }
