@@ -38,26 +38,26 @@ function lower(i) {
     mole[i].style.transform = "translateY(0px)";
     mole[i].style.height = "117%";
     blockObj[i].active = false;
-    // items[i].querySelector('.scoreScroll').style.transform = "none";
-    // items[i].querySelector('.scoreScroll').style.opacity = "1";
-    // block[i].style.backgroundColor = 'red';
     mole[i].style.visibility = 'hidden';
     console.log(blockObj[i]);
 }
+
+// let element = document.getElementsByClassName('score-animation'); 
+
+// add event listener: if clicked and active === true, call lower(). else setTimeout and call lower()
 
 function raise(i) {
     mole[i].style.visibility = 'visible';
     mole[i].style.transform = "translateY(-80px)";
     mole[i].style.height = "145%";
     blockObj[i].active = true;
-    // block[i].style.backgroundColor = 'green';
-    // add event listener: if clicked and active === true, call lower(). else setTimeout and call lower()
     mole[i].addEventListener("click", function () {
         if (blockObj[i].active === true) {
-            // items[i].querySelector('.scoreScroll').style.transform = "translateY(-80px)";
-            // items[i].querySelector('.scoreScroll').style.opacity = "0";
+            // element[i].classList.remove("score-animation");
+            // void element.offsetWidth;
+            // element[i].classList.add("score-animation");
             score = score + 1;
-            $('.scoreContainer h2 span').html(score);
+            $('#score').html(score);
             lower(i);
         }
     })
@@ -65,41 +65,24 @@ function raise(i) {
     setTimeout(lower, random(1000, 1200), i);
 }
 
+let seconds = undefined;
 
-// let count = 30;
-
-// function startTimer() {
-//     setInterval(timer, 1000);
-// }
-
-// function timer() {
-//     count = count - 1;
-//     document.getElementById('timer').innerHTML = count;
-// }
-
-// function stopTimer() {
-//     clearInterval(counter);
-// }
+function timer() {
+    let time = new Date;
+    return setInterval(function() {
+        seconds = parseInt((new Date - time) / 1000)
+        $('#timer').html(`${seconds}s`);
+    }, 1000)
+}
 
 
 
-
-    // https://stackoverflow.com/questions/1191865/code-for-a-simple-javascript-countdown-timer
+let countdown = undefined;
+// timer provided by David Thavixay
 
 // https://stackoverflow.com/questions/3583724/how-do-i-add-a-delay-in-a-javascript-loop
 
-// add randomizer for i
 
-// const randomArray = [0, 1, 2, 3, 4, 5]
-
-
-// const controlArray = [0, 1, 2, 3, 4, 5]
-// let j = random(0,6);
-// console.log(j);
-// let i = 0;                              // initial value of i
-
-// because 'i' is getting a random value each time, i cannot do i++ to get to the end of the array
-    // so i have an array 'j' that is running 'parallel' to the 'i' array and 'j' will increase by 1 each time the loop is run. it will keep intended position of 'i' in it's array
 
 $(function () {
     function init() {
@@ -110,52 +93,37 @@ $(function () {
                 alert("Game stopped! Press start to play again!");
                 return
                 
-            // } else if (count === 0) {
-            //     alert("Time up!");
-            //     return
+            } else if ( seconds >= 20) {
+                alert("Time up!");
+                clearInterval(countdown);
+                return
             } else {                              
                 init()                      // function calls itself again with a new random number out of the array
             }
         }, random(1000, 1500))
     }
-
-    //  dont need set interval here, but it seems to make the game faster and more random. else if i > ~30 setInterval(init, 2000);?
-        // setInterval(init, 16000);
-        // 16.2
-
-    // make lower() and raise() a shorter interval
-        // init();    
+  
     $('.startButton').on("click", function () {
         quit = false;
-        // j = 0;
-        $('.scoreContainer h2 span').html(0);
+        $('#score').html(0);
         init();
+        countdown = timer();
     })
+
+
 
     quit = false;
     $('.quitButton').on("click", function () {
         quit = true;
+        clearInterval(countdown);
         return
-        // $('.scoreContainer h2 span').html(0);
     })
+
+
+    $('.container').mousedown(function() {
+        $('.container').css('cursor', 'url(assets/mallet-icon-down.png),auto');
+    }).mouseup(function() {
+        $('.container').css('cursor', 'url(assets/mallet-icon.png),auto');
+    }) 
 });
     
-
-
-// function init() {
-//     let i = random(0, 6);                 // i is set to a random value between 0 and 6
-//     setTimeout(function () {             // set timeout to pause time between blocks being raised
-//         raise(i);                        // call raise() on i which is a random value between 0 and 6
-//         j++;                             // increase j counter by one. Control array length matches the div array length
-//         if (quit === true) {
-//             alert("Game stopped! Press start to play again!");
-//             return
-
-//         } else if (j < controlArray.length) {   // loop through div array. increase j by one until it reaches the end of the div array length
-//             init();
-//         } else {                        // once the block array reaches the end, j counter is reset to 0 and init() function is called again to 
-//             j = 0;                          // 'restart' the loop
-//             init();
-//         }
-//     }, random(1000, 1500))
-// }
