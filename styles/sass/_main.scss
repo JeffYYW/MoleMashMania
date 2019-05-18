@@ -38,6 +38,10 @@ header {
         button:focus {
             background-color: #fff;
         }
+
+        .quitButton {
+            display: none;
+        }
     }
 }
 

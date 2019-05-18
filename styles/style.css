@@ -228,6 +228,10 @@ header .commandButtons button:focus {
   background-color: #fff;
 }
 
+header .commandButtons .quitButton {
+  display: none;
+}
+
 .scoreContainer {
   height: 50px;
   width: 90%;

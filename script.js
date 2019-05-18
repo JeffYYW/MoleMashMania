@@ -108,6 +108,8 @@ $(function () {
         $('#score').html(0);
         init();
         countdown = timer();
+        $('.startButton').css('display', 'none');
+        $('.quitButton').css('display', 'block');
     })
 
 
@@ -116,7 +118,10 @@ $(function () {
     $('.quitButton').on("click", function () {
         quit = true;
         clearInterval(countdown);
+        $('.startButton').css('display', 'block');
+        $('.quitButton').css('display', 'none');
         return
+
     })
 
 
