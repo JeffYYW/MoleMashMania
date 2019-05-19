@@ -190,7 +190,7 @@ body {
 
 header {
   width: 100%;
-  height: 25vh;
+  height: 30vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -262,7 +262,7 @@ header .commandButtons .quitButton {
   display: flex;
   position: relative;
   width: 100%;
-  height: 75vh;
+  height: 70vh;
   background-image: url("../assets/cartoon-grass.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -285,8 +285,60 @@ img {
   -webkit-transition: .1s linear;
   transition: .1s linear;
   position: absolute;
-  left: 32%;
+  left: 27%;
   top: -13%;
+}
+
+@-webkit-keyframes scorePlusOne {
+  0% {
+    opacity: 1;
+    bottom: 0;
+  }
+  50% {
+    opacity: 0.5;
+    top: 50%;
+  }
+  100% {
+    opacity: 0;
+    top: 0;
+  }
+}
+
+@keyframes scorePlusOne {
+  0% {
+    opacity: 1;
+    bottom: 0;
+  }
+  50% {
+    opacity: 0.5;
+    top: 50%;
+  }
+  100% {
+    opacity: 0;
+    top: 0;
+  }
+}
+
+.score-animation {
+  -webkit-animation: scorePlusOne 0.4s linear;
+          animation: scorePlusOne 0.4s linear;
+}
+
+.scoreText {
+  position: absolute;
+  border: 2px solid red;
+  width: 100px;
+  height: 15%;
+  top: 37%;
+  z-index: 20;
+}
+
+#plusOne {
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  font-size: 50px;
+  color: #fff;
 }
 
 .dirtMound {

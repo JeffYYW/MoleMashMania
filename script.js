@@ -25,6 +25,7 @@ const mole = document.getElementsByClassName('moleDiv');
 // const items = document.getElementsByClassName('itemSet');
 // const plus1 = document.getElementById("plusOne");
 
+// reference used for the random function
 // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Timeouts_and_intervals#Active_learning_a_reaction_game 
 // #3
 function random(min, max) {
@@ -51,7 +52,7 @@ function lower(i) {
 
 function raise(i) {
     mole[i].style.visibility = 'visible';
-    mole[i].style.transform = "translateY(-90px)";
+    mole[i].style.transform = "translateY(-80px)";
     mole[i].style.height = "145%";
     blockObj[i].active = true;
     mole[i].addEventListener("click", function () {
@@ -59,7 +60,7 @@ function raise(i) {
             mole[i].querySelector("img").src = "assets/diglett-hit-nodirt.png"
             // element[i].classList.remove("score-animation");
             // void element.offsetWidth;
-            // element[i].classList.add("score-animation");
+            $('#plusOne').addClass("score-animation");
             score = score + 1;
             $('#score').html(score);
             lower(i);
@@ -73,9 +74,9 @@ function raise(i) {
 let seconds = undefined;
 
 function timer() {
-    let time = new Date;
+    let time = Date.now() + 32000;
     return setInterval(function() {
-        seconds = parseInt((new Date - time) / 1000)
+        seconds = parseInt((time - Date.now()) / 1000)
         $('#timer').html(`${seconds}s`);
     }, 1000)
 }
@@ -83,8 +84,9 @@ function timer() {
 // document.getElementById('plusOne').classList.add('animated', 'fadeOutUp');
 
 let countdown = undefined;
-// timer provided by David Thavixay
+// timer created with assistance from David Thavixay
 
+// reference used for setting a delay in a loop
 // https://stackoverflow.com/questions/3583724/how-do-i-add-a-delay-in-a-javascript-loop
 
 
@@ -96,13 +98,14 @@ $(function () {
         for (j = 0; j < mole.length; j++) {
             mole[j].firstElementChild.src = "assets/diglett-no-dirt.png";
         }
+        $('#plusOne').removeClass("score-animation");
         setTimeout(function () {             // set timeout to pause time between blocks being raised
             raise(i);                        // call raise() on i which is a random value between 0 and 6
             if (quit === true) {
                 alert("Game stopped! Press start to play again!");
                 return
                 
-            } else if ( seconds >= 20) {
+            } else if ( seconds <= 0) {
                 alert("Time up!");
                 clearInterval(countdown);
                 $('.startButton').css('display', 'block');
@@ -118,8 +121,8 @@ $(function () {
         quit = false;
         score = 0;
         // $('#score').html(0);
-        init();
         countdown = timer();
+        init();
         $('.startButton').css('display', 'none');
         $('.quitButton').css('display', 'block');
     })
