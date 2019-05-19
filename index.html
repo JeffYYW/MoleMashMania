@@ -6,21 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mole Mash Madness!</title>
 
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
-    <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
-    <script src="script.js"></script>
+    
 </head>
 <body>
     <header>
-        <div class="scoreContainer">
-            <h2>Score: <span id="score">0</span></h2>
-            <h1>Mole Mash Mania!</h1>
-            <h2><span id="timer"></span></h2>
-        </div>
-        <div class="commandButtons">
-            <button class="startButton">START</button>
-            <button class="quitButton">QUIT</button>
+        <h1>Mole Mash Mania!</h1>
+        <div class="headerContent">
+            <div class="commandButtons">
+                <button class="startButton">START</button>
+                <button class="quitButton">QUIT</button>
+            </div>
+            <div class="scoreContainer">
+                <h2 class="timerBox">Time:
+                    <span id="timer"></span>
+                </h2>
+                <h2 class="scoreBox">Score: 
+                    <span id="score">0</span>
+                </h2>
+            </div>
         </div>
         <div class="scoreText">
             <h3 id="plusOne">+1</h3>
@@ -82,13 +87,13 @@
 <!-- switch to jquery -->
 <!-- namespace -->
 <!-- add min width -->
-<!-- add timer -->
+<!-- alt tags -->
 <!-- responsiveness -->
 <!-- accesbiliy. keybinds. mole 1 addeventlistener -->
 <!-- kabobcase -->
 <!-- merge buttons -->
 <!-- clear redundant class names or ids -->
-<!-- show final score -->
+<!-- game over, final score, rank overlay to replace alert box -->
 
 
 
@@ -101,7 +106,7 @@
 <!-- style divs -->
 <!-- style background -->
 <!-- create new folder structure -->
-<!-- alt tags -->
+<!-- add timer -->
 
 
     <!-- stretch -->
@@ -115,7 +120,9 @@
     <!-- resetting the counter to 0 and restarting the init loop -->
 <!-- getting the random timing, at first had overlapping intervals but it didn't work well cause it would get crazy really quickly -->
 <!-- randomizing raiding the moles. solves with a parallel array 'j' -->
-
+<script src='https://code.jquery.com/jquery-3.2.1.min.js'
+    integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous'></script>
+<script src="script.js"></script>
 </body>
 </html>
 

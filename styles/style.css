@@ -186,6 +186,7 @@ h1, h2, h3 {
 
 body {
   background-color: lightgray;
+  min-height: 700px;
 }
 
 header {
@@ -203,53 +204,87 @@ header {
           align-items: center;
   background: -webkit-gradient(linear, left bottom, left top, from(#87CEFA), to(#00BFFF));
   background: linear-gradient(to top, #87CEFA, #00BFFF);
+  font-family: 'Bangers', cursive;
 }
 
-header .commandButtons {
+header .headerContent {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 30%;
+  width: 40%;
+  margin-top: 1%;
 }
 
-header .commandButtons button {
+header h1 {
+  margin-top: 2%;
+  font-size: 60px;
+  letter-spacing: 2px;
+}
+
+.commandButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.commandButtons button {
   border: none;
   border-radius: 100px;
   background-color: #D47D70;
   padding: 20px 35px;
   -webkit-box-shadow: 5px 5px 5px #2e2d2c;
           box-shadow: 5px 5px 5px #2e2d2c;
+  font-size: 25px;
 }
 
-header .commandButtons button:focus {
+.commandButtons button:focus {
   background-color: #fff;
 }
 
-header .commandButtons .quitButton {
+.commandButtons .startButton {
+  position: absolute;
+}
+
+.commandButtons .quitButton {
+  position: absolute;
   display: none;
 }
 
 .scoreContainer {
-  height: 50px;
-  width: 90%;
+  height: 100%;
+  width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   white-space: nowrap;
-  margin-top: 2%;
 }
 
 .scoreContainer h2 {
-  font-size: 30px;
+  font-size: 35px;
+}
+
+.scoreContainer .scoreBox {
+  width: 60%;
+}
+
+.scoreContainer .timerBox {
+  width: 60%;
+  margin-bottom: 5%;
 }
 
 .scoreContainer #timer {
@@ -287,6 +322,7 @@ img {
   position: absolute;
   left: 27%;
   top: -13%;
+  visibility: hidden;
 }
 
 @-webkit-keyframes scorePlusOne {
@@ -320,16 +356,16 @@ img {
 }
 
 .score-animation {
-  -webkit-animation: scorePlusOne 0.4s linear;
-          animation: scorePlusOne 0.4s linear;
+  -webkit-animation: scorePlusOne 0.3s linear;
+          animation: scorePlusOne 0.3s linear;
 }
 
 .scoreText {
   position: absolute;
-  border: 2px solid red;
-  width: 100px;
+  width: 55px;
   height: 15%;
-  top: 37%;
+  top: 22%;
+  left: 61%;
   z-index: 20;
 }
 
@@ -337,8 +373,7 @@ img {
   position: absolute;
   bottom: 0;
   opacity: 0;
-  font-size: 50px;
-  color: #fff;
+  font-size: 60px;
 }
 
 .dirtMound {

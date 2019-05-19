@@ -36,7 +36,7 @@ function random(min, max) {
 let score = 0;
 
 function lower(i) {
-    mole[i].style.transform = "translateY(0px)";
+    mole[i].style.transform = "translateY(0%)";
     mole[i].style.height = "117%";
     blockObj[i].active = false;
     mole[i].style.visibility = 'hidden';
@@ -52,7 +52,7 @@ function lower(i) {
 
 function raise(i) {
     mole[i].style.visibility = 'visible';
-    mole[i].style.transform = "translateY(-80px)";
+    mole[i].style.transform = "translateY(-65%)";
     mole[i].style.height = "145%";
     blockObj[i].active = true;
     mole[i].addEventListener("click", function () {
@@ -77,7 +77,7 @@ function timer() {
     let time = Date.now() + 32000;
     return setInterval(function() {
         seconds = parseInt((time - Date.now()) / 1000)
-        $('#timer').html(`${seconds}s`);
+        $('#timer').html(`${seconds}`);
     }, 1000)
 }
 
