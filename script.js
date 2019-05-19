@@ -23,7 +23,7 @@ const blockObj = [
 
 const mole = document.getElementsByClassName('moleDiv');
 // const items = document.getElementsByClassName('itemSet');
-
+// const plus1 = document.getElementById("plusOne");
 
 // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Timeouts_and_intervals#Active_learning_a_reaction_game 
 // #3
@@ -39,6 +39,7 @@ function lower(i) {
     mole[i].style.height = "117%";
     blockObj[i].active = false;
     mole[i].style.visibility = 'hidden';
+    
     console.log(blockObj[i]);
 }
 
@@ -46,13 +47,16 @@ function lower(i) {
 
 // add event listener: if clicked and active === true, call lower(). else setTimeout and call lower()
 
+// change these to add class (classList.add)
+
 function raise(i) {
     mole[i].style.visibility = 'visible';
-    mole[i].style.transform = "translateY(-80px)";
+    mole[i].style.transform = "translateY(-90px)";
     mole[i].style.height = "145%";
     blockObj[i].active = true;
     mole[i].addEventListener("click", function () {
         if (blockObj[i].active === true) {
+            mole[i].querySelector("img").src = "assets/diglett-hit-nodirt.png"
             // element[i].classList.remove("score-animation");
             // void element.offsetWidth;
             // element[i].classList.add("score-animation");
@@ -60,6 +64,7 @@ function raise(i) {
             $('#score').html(score);
             lower(i);
         }
+        
     })
     console.log(blockObj[i]);
     setTimeout(lower, random(1000, 1200), i);
@@ -75,7 +80,7 @@ function timer() {
     }, 1000)
 }
 
-
+// document.getElementById('plusOne').classList.add('animated', 'fadeOutUp');
 
 let countdown = undefined;
 // timer provided by David Thavixay
@@ -87,6 +92,10 @@ let countdown = undefined;
 $(function () {
     function init() {
         let i = random(0,6);                 // i is set to a random value between 0 and 6
+        // reset all 
+        for (j = 0; j < mole.length; j++) {
+            mole[j].firstElementChild.src = "assets/diglett-no-dirt.png";
+        }
         setTimeout(function () {             // set timeout to pause time between blocks being raised
             raise(i);                        // call raise() on i which is a random value between 0 and 6
             if (quit === true) {
@@ -96,6 +105,8 @@ $(function () {
             } else if ( seconds >= 20) {
                 alert("Time up!");
                 clearInterval(countdown);
+                $('.startButton').css('display', 'block');
+                $('.quitButton').css('display', 'none');
                 return
             } else {                              
                 init()                      // function calls itself again with a new random number out of the array
@@ -105,7 +116,8 @@ $(function () {
   
     $('.startButton').on("click", function () {
         quit = false;
-        $('#score').html(0);
+        score = 0;
+        // $('#score').html(0);
         init();
         countdown = timer();
         $('.startButton').css('display', 'none');
