@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mole Mash Madness!</title>
+    <title>Mole Mash Mania!</title>
 
     <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
@@ -12,23 +12,22 @@
 </head>
 <body>
     <header>
-        <h1>Mole Mash Mania!</h1>
         <div class="headerContent">
             <div class="commandButtons">
                 <button class="startButton">START</button>
                 <button class="quitButton">QUIT</button>
             </div>
             <div class="scoreContainer">
+                <h2 class="scoreBox">Score:
+                    <span id="score">0</span>
+                </h2>
                 <h2 class="timerBox">Time:
                     <span id="timer"></span>
                 </h2>
-                <h2 class="scoreBox">Score: 
-                    <span id="score">0</span>
-                </h2>
+                <div class="scoreText">
+                    <h3 id="plusOne">+1</h3>
+                </div>
             </div>
-        </div>
-        <div class="scoreText">
-            <h3 id="plusOne">+1</h3>
         </div>
     </header>
 
@@ -82,19 +81,25 @@
             </div>
         </div>
     </div>
-
+    <div class="startOverlay">
+        <div class="modalOverlay">
+            <div class="titleContainer">
+                <h1>Mole Mash <span>Mania!</span></h1>
+                <p>Click to begin!</p>
+            </div>  
+        </div>
+    </div>
     <!-- to do -->
-<!-- switch to jquery -->
+
 <!-- namespace -->
 <!-- add min width -->
 <!-- alt tags -->
 <!-- responsiveness -->
 <!-- accesbiliy. keybinds. mole 1 addeventlistener -->
 <!-- kabobcase -->
-<!-- merge buttons -->
 <!-- clear redundant class names or ids -->
 <!-- game over, final score, rank overlay to replace alert box -->
-
+<!-- hover states -->
 
 
 
@@ -107,6 +112,9 @@
 <!-- style background -->
 <!-- create new folder structure -->
 <!-- add timer -->
+<!-- merge buttons -->
+<!-- switch to jquery -->
+
 
 
     <!-- stretch -->

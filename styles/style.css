@@ -179,14 +179,75 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   overflow: hidden;
 }
 
+.startOverlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.modalOverlay {
+  position: absolute;
+  top: 10%;
+  right: 20%;
+  bottom: 10%;
+  left: 20%;
+  border-radius: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: radial-gradient(#ca5f50, #D47D70);
+}
+
+.titleContainer {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  letter-spacing: 2px;
+}
+
+h1 {
+  margin-top: 2%;
+  font-size: 100px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+h1 span {
+  display: block;
+}
+
+p {
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+
 h1, h2, h3 {
   margin: 0;
   padding: 0;
 }
 
 body {
+  font-family: 'Bangers', cursive;
   background-color: lightgray;
-  min-height: 700px;
+  position: relative;
 }
 
 header {
@@ -207,21 +268,17 @@ header {
   font-family: 'Bangers', cursive;
 }
 
-header .headerContent {
+.headerContent {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 40%;
-  margin-top: 1%;
-}
-
-header h1 {
+  width: 70%;
   margin-top: 2%;
-  font-size: 60px;
-  letter-spacing: 2px;
 }
 
 .commandButtons {
+  height: 40%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -239,7 +296,7 @@ header h1 {
   border: none;
   border-radius: 100px;
   background-color: #D47D70;
-  padding: 20px 35px;
+  padding: 15px 35px;
   -webkit-box-shadow: 5px 5px 5px #2e2d2c;
           box-shadow: 5px 5px 5px #2e2d2c;
   font-size: 25px;
@@ -259,23 +316,20 @@ header h1 {
 }
 
 .scoreContainer {
-  height: 100%;
-  width: 50%;
+  height: 40%;
+  width: 75%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   white-space: nowrap;
+  position: relative;
 }
 
 .scoreContainer h2 {
-  font-size: 35px;
+  font-size: 40px;
 }
 
 .scoreContainer .scoreBox {
@@ -284,11 +338,10 @@ header h1 {
 
 .scoreContainer .timerBox {
   width: 60%;
-  margin-bottom: 5%;
 }
 
 .scoreContainer #timer {
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .container {
@@ -363,9 +416,9 @@ img {
 .scoreText {
   position: absolute;
   width: 55px;
-  height: 15%;
-  top: 22%;
-  left: 61%;
+  height: 170%;
+  top: 50%;
+  left: 16%;
   z-index: 20;
 }
 
@@ -446,6 +499,18 @@ img {
     width: 88%;
     left: 21%;
   }
+  .headerContent {
+    width: 90%;
+  }
+}
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 75px;
+  }
+  p {
+    font-size: 30px;
+  }
 }
 
 @media (max-width: 700px) {
@@ -456,11 +521,30 @@ img {
   .dirtMound {
     width: 125%;
   }
+  .commandButtons {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    width: 30%;
+  }
+  .scoreContainer .timerBox {
+    text-align: center;
+  }
 }
 
 @media (max-width: 600px) {
-  header .commandButtons {
-    width: 70%;
+  .modalOverlay {
+    right: 10%;
+    left: 10%;
+  }
+  .titleContainer {
+    width: 80%;
+  }
+  h1 {
+    font-size: 75px;
+  }
+  p {
+    font-size: 30px;
   }
   .moleDiv {
     left: 14%;
@@ -499,9 +583,51 @@ img {
   }
 }
 
+@media (max-width: 500px) {
+  .headerContent {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .scoreContainer {
+    width: 100%;
+  }
+  .commandButtons {
+    width: 50%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .scoreText {
+    top: 0;
+    left: 46%;
+  }
+}
+
+@media (max-width: 460px) {
+  .modalOverlay {
+    right: 5%;
+    left: 5%;
+    border-radius: 5px;
+  }
+  .titleContainer {
+    width: 90%;
+  }
+  h1 {
+    font-size: 60px;
+  }
+  p {
+    font-size: 25px;
+  }
+}
+
 @media (max-width: 320px) {
-  header .commandButtons {
-    width: 70%;
+  .headerContent {
+    width: 95%;
   }
   .moleDiv {
     width: 125%;

@@ -120,7 +120,7 @@ $(function () {
     $('.startButton').on("click", function () {
         quit = false;
         score = 0;
-        // $('#score').html(0);
+        $('#score').html(0);
         countdown = timer();
         init();
         $('.startButton').css('display', 'none');
@@ -145,5 +145,10 @@ $(function () {
     }).mouseup(function() {
         $('.container').css('cursor', 'url(assets/mallet-icon.png),auto');
     }) 
+
+    $('.modalOverlay').on('click', function() {
+        $('.startOverlay').css('display', 'none');
+        $('.startOverlay').css('display', 'none');
+    })
 });
     
