@@ -189,18 +189,18 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 .modal-overlay {
-  position: absolute;
-  top: 10%;
-  right: 20%;
-  bottom: 10%;
-  left: 20%;
-  border-radius: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: absolute;
+  top: 10%;
+  right: 20%;
+  bottom: 10%;
+  left: 20%;
+  border-radius: 100px;
   background: radial-gradient(#ca5f50, #D47D70);
 }
 
@@ -218,8 +218,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 10%;
-  margin-bottom: 10%;
+  margin: 10% 0;
   letter-spacing: 2px;
 }
 
@@ -236,18 +235,6 @@ h1 span {
 
 p {
   font-size: 30px;
-  letter-spacing: 2px;
-}
-
-h1, h2, h3 {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Bangers', cursive;
-  background-color: lightgray;
-  position: relative;
 }
 
 header {
@@ -265,28 +252,27 @@ header {
           align-items: center;
   background: -webkit-gradient(linear, left bottom, left top, from(#87CEFA), to(#00BFFF));
   background: linear-gradient(to top, #87CEFA, #00BFFF);
-  font-family: 'Bangers', cursive;
 }
 
 .header-content {
+  width: 70%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 70%;
   margin-top: 2%;
 }
 
 .command-buttons {
+  width: 50%;
   height: 40%;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 50%;
-  position: relative;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -296,9 +282,9 @@ header {
   border: none;
   border-radius: 100px;
   background-color: #D47D70;
-  padding: 15px 35px;
   -webkit-box-shadow: 5px 5px 5px #2e2d2c;
           box-shadow: 5px 5px 5px #2e2d2c;
+  padding: 15px 35px;
   font-size: 25px;
 }
 
@@ -317,8 +303,9 @@ header {
 }
 
 .score-container {
-  height: 40%;
   width: 75%;
+  height: 40%;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -326,59 +313,22 @@ header {
       -ms-flex-align: center;
           align-items: center;
   white-space: nowrap;
-  position: relative;
-}
-
-.score-container h2 {
   font-size: 40px;
 }
 
-.score-container .score-box {
-  width: 60%;
-}
-
-.score-container .timer-box {
-  width: 60%;
-}
-
+.score-container h2,
 .score-container #timer {
   font-size: 40px;
 }
 
-.container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  width: 100%;
-  height: 70vh;
-  background-image: url("../assets/cartoon-grass.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  cursor: url("../assets/mallet-icon.png"), auto;
+.score-container .score-box,
+.score-container .timer-box {
+  width: 60%;
 }
 
-img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-.mole-div {
-  width: 62%;
-  height: 117%;
-  -webkit-transition: .1s linear;
-  transition: .1s linear;
-  position: absolute;
-  left: 27%;
-  top: -13%;
-  visibility: hidden;
-}
-
+/***********************************************************
+		    		  Score Animation
+***********************************************************/
 @-webkit-keyframes scoreplus-one {
   0% {
     opacity: 1;
@@ -393,7 +343,6 @@ img {
     top: 0;
   }
 }
-
 @keyframes scoreplus-one {
   0% {
     opacity: 1;
@@ -415,9 +364,9 @@ img {
 }
 
 .score-text {
-  position: absolute;
   width: 55px;
   height: 170%;
+  position: absolute;
   top: 50%;
   left: 16%;
   z-index: 20;
@@ -428,6 +377,53 @@ img {
   bottom: 0;
   opacity: 0;
   font-size: 60px;
+}
+
+body {
+  font-family: 'Bangers', cursive;
+  position: relative;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+/***********************************************************
+		    		  MAIN SECTION
+***********************************************************/
+.container {
+  width: 100%;
+  height: 70vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  background-image: url("../assets/cartoon-grass.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: url("../assets/mallet-icon.png"), auto;
+}
+
+.mole-div {
+  width: 62%;
+  height: 117%;
+  position: absolute;
+  left: 27%;
+  top: -13%;
+  visibility: hidden;
+  -webkit-transition: .1s linear;
+  transition: .1s linear;
 }
 
 .dirt-mound {
@@ -496,12 +492,12 @@ img {
 }
 
 @media (max-width: 1024px) {
+  .header-content {
+    width: 90%;
+  }
   .mole-div {
     width: 88%;
     left: 21%;
-  }
-  .header-content {
-    width: 90%;
   }
 }
 
@@ -515,13 +511,6 @@ img {
 }
 
 @media (max-width: 700px) {
-  .mole-div {
-    width: 100%;
-    left: 16%;
-  }
-  .dirt-mound {
-    width: 125%;
-  }
   .command-buttons {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
@@ -530,6 +519,13 @@ img {
   }
   .score-container .timer-box {
     text-align: center;
+  }
+  .mole-div {
+    width: 100%;
+    left: 16%;
+  }
+  .dirt-mound {
+    width: 125%;
   }
 }
 

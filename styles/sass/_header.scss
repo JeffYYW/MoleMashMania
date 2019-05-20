@@ -1,0 +1,108 @@
+header {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to top, #87CEFA, #00BFFF);    
+}
+
+.header-content {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    margin-top: 2%;   
+}
+
+
+
+.command-buttons {
+    width: 50%;
+    height: 40%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+        button {
+            border: none;
+            border-radius: 100px;
+            background-color: #D47D70;
+            box-shadow: 5px 5px 5px rgb(46, 45, 44);
+            padding: 15px 35px;
+            font-size: 25px;
+        }
+
+        button:focus,
+        button:hover {
+            background-color: #FC7F4A;
+        }
+
+        .start-button {
+            position: absolute;
+        }
+
+        .quit-button {
+            position: absolute;
+            display: none;
+        }
+}
+
+.score-container {
+    width: 75%;
+    height: 40%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    font-size: 40px;
+    
+    h2,
+    #timer {
+        font-size: 40px;
+    }
+
+    .score-box,
+    .timer-box {
+        width: 60%;
+    }
+}
+
+/***********************************************************
+		    		  Score Animation
+***********************************************************/
+
+@keyframes scoreplus-one {
+    0% {
+        opacity: 1;
+        bottom: 0;
+    }
+    50% {
+        opacity: 0.5;
+        top: 50%;
+    }
+    100% {
+        opacity: 0;
+        top: 0;
+    }
+}
+
+.score-animation {
+    animation: scoreplus-one 0.3s linear;
+}
+
+.score-text {
+    width: 55px;
+    height: 170%;
+    position: absolute;
+    top: 50%;
+    left: 16%;
+    z-index: 20;
+}
+
+#plus-one {
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    font-size: 60px;
+}

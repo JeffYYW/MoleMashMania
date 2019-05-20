@@ -1,0 +1,224 @@
+@media (min-width: 1600px) {
+    .mole-div {
+        width: 75%;
+        left: 20%;
+    }
+}
+
+@media (max-width: 1400px) {
+    .mole-div {
+        width: 75%;
+        left: 20%;
+    }
+
+    .dirt-mound {
+        width: 120%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .mole-div {
+        width: 80%;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .header-content {
+        width: 90%;
+    }
+
+    .mole-div {
+        width: 88%;
+        left: 21%;
+    }  
+}
+
+@media (max-width: 800px) {
+    h1 {
+        font-size: 75px;
+    }
+
+    p {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 700px) {
+    .command-buttons {
+        justify-content: flex-start;
+        width: 30%;
+    }
+
+    .score-container {
+        .timer-box {
+            text-align: center;
+        }
+    }
+
+    .mole-div {
+        width: 100%;
+        left: 16%;
+    }
+
+    .dirt-mound {
+        width: 125%;
+    }
+}
+
+@media (max-width: 600px) {
+    .modal-overlay {
+        right: 10%;
+        left: 10%;
+    }
+
+    .title-container {
+        width: 80%;
+    }
+
+    h1 {
+        font-size: 75px;
+    }
+
+    p {
+        font-size: 30px;
+    }
+
+    .mole-div {
+        left: 14%;
+    }
+
+    .dirt-mound {
+        width: 120%;
+    }
+
+    .item-set {
+        position: absolute;
+        width: 30%;
+        height: 20%;
+    }
+
+    .item-set-1 {
+        top: 9%;
+        left: 5%;
+    }
+
+    .item-set-2 {
+        top: 32%;
+        left: 29%;
+    }
+
+    .item-set-3 {
+        top: 51%;
+        left: 62%;
+    }
+
+    .item-set-4 {
+        top: 62%; 
+        left: 3%;
+    }
+
+    .item-set-5 {
+        top: 13%;
+        right: 6%;
+    }
+
+    .item-set-6 {
+        bottom: 7%;
+        right: 31%;
+    }
+}
+
+@media (max-width: 500px) {
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .score-container {
+        width: 100%;
+    }
+
+    .command-buttons {
+        width: 50%;
+        justify-content: center;
+    }
+
+    .score-text {
+        top: 0;
+        left: 46%;
+    }
+}
+
+@media (max-width: 460px) {
+    .modal-overlay {
+        right: 5%;
+        left: 5%;
+        border-radius: 5px;
+    }
+
+    .title-container {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 60px;
+    }
+
+    p {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 320px) {
+    .header-content {
+        width: 95%;
+    }
+
+    .mole-div {
+        width: 125%;
+        left: 13%;
+    }
+
+    .dirt-mound {
+        width: 150%;
+    }
+
+    .item-set {
+        position: absolute;
+        width: 30%;
+        height: 20%;
+    }
+
+    .item-set-1 {
+        top: 11%;
+        left: 8%;
+    }
+
+    .item-set-2 {
+        top: 40%;
+        left: 7%;
+    }
+
+    .item-set-3 {
+        top: 13%;
+        right: 16%;
+        left: initial;
+    }
+
+    .item-set-4 {
+        top: 68%; 
+        left: 3%;
+    }
+
+    .item-set-5 {
+        top: 47%;
+        left: 52%;
+        right: initial;
+    }
+
+    .item-set-6 {
+        bottom: 3%;
+        right: 23%;
+    }
+}
