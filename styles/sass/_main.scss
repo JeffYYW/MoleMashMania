@@ -119,8 +119,9 @@ button {
     font-size: 25px;
 }
 
-button:focus {
-    background-color: #fff;
+button:focus,
+button:hover {
+    background-color: #FC7F4A;
 }
 
 .startButton {

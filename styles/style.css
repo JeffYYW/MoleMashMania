@@ -302,8 +302,9 @@ header {
   font-size: 25px;
 }
 
-.commandButtons button:focus {
-  background-color: #fff;
+.commandButtons button:focus,
+.commandButtons button:hover {
+  background-color: #FC7F4A;
 }
 
 .commandButtons .startButton {
