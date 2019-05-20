@@ -179,7 +179,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   overflow: hidden;
 }
 
-.startOverlay {
+.start-overlay {
   position: absolute;
   top: 0;
   right: 0;
@@ -188,7 +188,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-.modalOverlay {
+.modal-overlay {
   position: absolute;
   top: 10%;
   right: 20%;
@@ -204,7 +204,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   background: radial-gradient(#ca5f50, #D47D70);
 }
 
-.titleContainer {
+.title-container {
   width: 60%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -268,7 +268,7 @@ header {
   font-family: 'Bangers', cursive;
 }
 
-.headerContent {
+.header-content {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -277,7 +277,7 @@ header {
   margin-top: 2%;
 }
 
-.commandButtons {
+.command-buttons {
   height: 40%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -292,7 +292,7 @@ header {
           align-items: center;
 }
 
-.commandButtons button {
+.command-buttons button {
   border: none;
   border-radius: 100px;
   background-color: #D47D70;
@@ -302,21 +302,21 @@ header {
   font-size: 25px;
 }
 
-.commandButtons button:focus,
-.commandButtons button:hover {
+.command-buttons button:focus,
+.command-buttons button:hover {
   background-color: #FC7F4A;
 }
 
-.commandButtons .startButton {
+.command-buttons .start-button {
   position: absolute;
 }
 
-.commandButtons .quitButton {
+.command-buttons .quit-button {
   position: absolute;
   display: none;
 }
 
-.scoreContainer {
+.score-container {
   height: 40%;
   width: 75%;
   display: -webkit-box;
@@ -329,19 +329,19 @@ header {
   position: relative;
 }
 
-.scoreContainer h2 {
+.score-container h2 {
   font-size: 40px;
 }
 
-.scoreContainer .scoreBox {
+.score-container .score-box {
   width: 60%;
 }
 
-.scoreContainer .timerBox {
+.score-container .timer-box {
   width: 60%;
 }
 
-.scoreContainer #timer {
+.score-container #timer {
   font-size: 40px;
 }
 
@@ -368,7 +368,7 @@ img {
           user-select: none;
 }
 
-.moleDiv {
+.mole-div {
   width: 62%;
   height: 117%;
   -webkit-transition: .1s linear;
@@ -379,7 +379,7 @@ img {
   visibility: hidden;
 }
 
-@-webkit-keyframes scorePlusOne {
+@-webkit-keyframes scoreplus-one {
   0% {
     opacity: 1;
     bottom: 0;
@@ -394,7 +394,7 @@ img {
   }
 }
 
-@keyframes scorePlusOne {
+@keyframes scoreplus-one {
   0% {
     opacity: 1;
     bottom: 0;
@@ -410,11 +410,11 @@ img {
 }
 
 .score-animation {
-  -webkit-animation: scorePlusOne 0.3s linear;
-          animation: scorePlusOne 0.3s linear;
+  -webkit-animation: scoreplus-one 0.3s linear;
+          animation: scoreplus-one 0.3s linear;
 }
 
-.scoreText {
+.score-text {
   position: absolute;
   width: 55px;
   height: 170%;
@@ -423,84 +423,84 @@ img {
   z-index: 20;
 }
 
-#plusOne {
+#plus-one {
   position: absolute;
   bottom: 0;
   opacity: 0;
   font-size: 60px;
 }
 
-.dirtMound {
+.dirt-mound {
   width: 110%;
   height: 120%;
   position: absolute;
 }
 
-.itemSet {
+.item-set {
   position: absolute;
   width: 20%;
   height: 20%;
 }
 
-.itemSet1 {
+.item-set-1 {
   top: 14%;
   left: 9%;
 }
 
-.itemSet2 {
+.item-set-2 {
   top: 27%;
   left: 31%;
 }
 
-.itemSet3 {
+.item-set-3 {
   top: 45%;
   left: 50%;
 }
 
-.itemSet4 {
+.item-set-4 {
   top: 63%;
   left: 12%;
 }
 
-.itemSet5 {
+.item-set-5 {
   top: 17%;
   right: 9%;
 }
 
-.itemSet6 {
+.item-set-6 {
   bottom: 10%;
   right: 13%;
 }
 
 @media (min-width: 1600px) {
-  .moleDiv {
+  .mole-div {
     width: 75%;
     left: 20%;
   }
 }
 
 @media (max-width: 1400px) {
-  .moleDiv {
+  .mole-div {
     width: 75%;
     left: 20%;
   }
-  .dirtMound {
+  .dirt-mound {
     width: 120%;
   }
 }
 
 @media (max-width: 1200px) {
-  .moleDiv {
+  .mole-div {
     width: 80%;
   }
 }
 
 @media (max-width: 1024px) {
-  .moleDiv {
+  .mole-div {
     width: 88%;
     left: 21%;
   }
-  .headerContent {
+  .header-content {
     width: 90%;
   }
 }
@@ -515,30 +515,30 @@ img {
 }
 
 @media (max-width: 700px) {
-  .moleDiv {
+  .mole-div {
     width: 100%;
     left: 16%;
   }
-  .dirtMound {
+  .dirt-mound {
     width: 125%;
   }
-  .commandButtons {
+  .command-buttons {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
     width: 30%;
   }
-  .scoreContainer .timerBox {
+  .score-container .timer-box {
     text-align: center;
   }
 }
 
 @media (max-width: 600px) {
-  .modalOverlay {
+  .modal-overlay {
     right: 10%;
     left: 10%;
   }
-  .titleContainer {
+  .title-container {
     width: 80%;
   }
   h1 {
@@ -547,45 +547,45 @@ img {
   p {
     font-size: 30px;
   }
-  .moleDiv {
+  .mole-div {
     left: 14%;
   }
-  .dirtMound {
+  .dirt-mound {
     width: 120%;
   }
-  .itemSet {
+  .item-set {
     position: absolute;
     width: 30%;
     height: 20%;
   }
-  .itemSet1 {
+  .item-set-1 {
     top: 9%;
     left: 5%;
   }
-  .itemSet2 {
+  .item-set-2 {
     top: 32%;
     left: 29%;
   }
-  .itemSet3 {
+  .item-set-3 {
     top: 51%;
     left: 62%;
   }
-  .itemSet4 {
+  .item-set-4 {
     top: 62%;
     left: 3%;
   }
-  .itemSet5 {
+  .item-set-5 {
     top: 13%;
     right: 6%;
   }
-  .itemSet6 {
+  .item-set-6 {
     bottom: 7%;
     right: 31%;
   }
 }
 
 @media (max-width: 500px) {
-  .headerContent {
+  .header-content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -594,28 +594,28 @@ img {
         -ms-flex-align: center;
             align-items: center;
   }
-  .scoreContainer {
+  .score-container {
     width: 100%;
   }
-  .commandButtons {
+  .command-buttons {
     width: 50%;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .scoreText {
+  .score-text {
     top: 0;
     left: 46%;
   }
 }
 
 @media (max-width: 460px) {
-  .modalOverlay {
+  .modal-overlay {
     right: 5%;
     left: 5%;
     border-radius: 5px;
   }
-  .titleContainer {
+  .title-container {
     width: 90%;
   }
   h1 {
@@ -627,44 +627,44 @@ img {
 }
 
 @media (max-width: 320px) {
-  .headerContent {
+  .header-content {
     width: 95%;
   }
-  .moleDiv {
+  .mole-div {
     width: 125%;
     left: 13%;
   }
-  .dirtMound {
+  .dirt-mound {
     width: 150%;
   }
-  .itemSet {
+  .item-set {
     position: absolute;
     width: 30%;
     height: 20%;
   }
-  .itemSet1 {
+  .item-set-1 {
     top: 11%;
     left: 8%;
   }
-  .itemSet2 {
+  .item-set-2 {
     top: 40%;
     left: 7%;
   }
-  .itemSet3 {
+  .item-set-3 {
     top: 13%;
     right: 16%;
     left: initial;
   }
-  .itemSet4 {
+  .item-set-4 {
     top: 68%;
     left: 3%;
   }
-  .itemSet5 {
+  .item-set-5 {
     top: 47%;
     left: 52%;
     right: initial;
   }
-  .itemSet6 {
+  .item-set-6 {
     bottom: 3%;
     right: 23%;
   }

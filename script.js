@@ -21,8 +21,8 @@ const blockObj = [
     { active: false },
 ]
 
-const mole = document.getElementsByClassName('moleDiv');
-// const items = document.getElementsByClassName('itemSet');
+const moles = document.getElementsByClassName('mole-div');
+// const items = document.getElementsByClassName('item-set');
 // const plus1 = document.getElementById("plusOne");
 
 // reference used for the random function
@@ -36,10 +36,10 @@ function random(min, max) {
 let score = 0;
 
 function lower(i) {
-    mole[i].style.transform = "translateY(0%)";
-    mole[i].style.height = "117%";
+    moles[i].style.transform = "translateY(0%)";
+    moles[i].style.height = "117%";
     blockObj[i].active = false;
-    mole[i].style.visibility = 'hidden';
+    moles[i].style.visibility = 'hidden';
     
     console.log(blockObj[i]);
 }
@@ -51,16 +51,16 @@ function lower(i) {
 // change these to add class (classList.add)
 
 function raise(i) {
-    mole[i].style.visibility = 'visible';
-    mole[i].style.transform = "translateY(-65%)";
-    mole[i].style.height = "145%";
+    moles[i].style.visibility = 'visible';
+    moles[i].style.transform = "translateY(-65%)";
+    moles[i].style.height = "145%";
     blockObj[i].active = true;
-    mole[i].addEventListener("click", function () {
+    moles[i].addEventListener("click", function () {
         if (blockObj[i].active === true) {
-            mole[i].querySelector("img").src = "assets/diglett-hit-nodirt.png"
+            moles[i].querySelector("img").src = "assets/diglett-hit-nodirt.png"
             // element[i].classList.remove("score-animation");
             // void element.offsetWidth;
-            $('#plusOne').addClass("score-animation");
+            $('#plus-one').addClass("score-animation");
             score = score + 1;
             $('#score').html(score);
             lower(i);
@@ -95,10 +95,10 @@ $(function () {
     function init() {
         let i = random(0,6);                 // i is set to a random value between 0 and 6
         // reset all 
-        for (j = 0; j < mole.length; j++) {
-            mole[j].firstElementChild.src = "assets/diglett-no-dirt.png";
+        for (j = 0; j < moles.length; j++) {
+            moles[j].firstElementChild.src = "assets/diglett-no-dirt.png";
         }
-        $('#plusOne').removeClass("score-animation");
+        $('#plus-one').removeClass("score-animation");
         setTimeout(function () {             // set timeout to pause time between blocks being raised
             raise(i);                        // call raise() on i which is a random value between 0 and 6
             if (quit === true) {
@@ -108,8 +108,8 @@ $(function () {
             } else if ( seconds <= 0) {
                 alert("Time up!");
                 clearInterval(countdown);
-                $('.startButton').css('display', 'block');
-                $('.quitButton').css('display', 'none');
+                $('.start-button').css('display', 'block');
+                $('.quit-button').css('display', 'none');
                 return
             } else {                              
                 init()                      // function calls itself again with a new random number out of the array
@@ -117,24 +117,24 @@ $(function () {
         }, random(1000, 1500))
     }
   
-    $('.startButton').on("click", function () {
+    $('.start-button').on("click", function () {
         quit = false;
         score = 0;
         $('#score').html(0);
         countdown = timer();
         init();
-        $('.startButton').css('display', 'none');
-        $('.quitButton').css('display', 'block');
+        $('.start-button').css('display', 'none');
+        $('.quit-button').css('display', 'block');
     })
 
 
 
     quit = false;
-    $('.quitButton').on("click", function () {
+    $('.quit-button').on("click", function () {
         quit = true;
         clearInterval(countdown);
-        $('.startButton').css('display', 'block');
-        $('.quitButton').css('display', 'none');
+        $('.start-button').css('display', 'block');
+        $('.quit-button').css('display', 'none');
         return
 
     })
@@ -146,9 +146,9 @@ $(function () {
         $('.container').css('cursor', 'url(assets/mallet-icon.png),auto');
     }) 
 
-    $('.modalOverlay').on('click', function() {
-        $('.startOverlay').css('display', 'none');
-        $('.startOverlay').css('display', 'none');
+    $('.modal-overlay').on('click', function() {
+        $('.start-overlay').css('display', 'none');
+        $('.start-overlay').css('display', 'none');
     })
 });
     

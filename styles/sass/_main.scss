@@ -1,4 +1,4 @@
-.startOverlay {
+.start-overlay {
     position: absolute;
     top: 0;
     right: 0;
@@ -9,7 +9,7 @@
     // border-radius: 100px;
 }
 
-.modalOverlay {
+.modal-overlay {
     position: absolute;
     top: 10%;
     right: 20%;
@@ -22,7 +22,7 @@
     background: radial-gradient(#ca5f50, #D47D70)
 }
 
-.titleContainer {
+.title-container {
     // border: 2px solid blue;
     width: 60%;
     display: flex;
@@ -85,7 +85,7 @@ header {
     
 }
 
-.headerContent {
+.header-content {
     height: 100%;
         display: flex;
         // flex-direction: column;
@@ -97,7 +97,7 @@ header {
 
 
 
-.commandButtons {
+.command-buttons {
         // margin-top: 1%;
         height: 40%;
         display: flex;
@@ -124,17 +124,17 @@ button:hover {
     background-color: #FC7F4A;
 }
 
-.startButton {
+.start-button {
     position: absolute;
 }
 
-.quitButton {
+.quit-button {
     position: absolute;
     display: none;
 }
  }
 
-.scoreContainer {
+.score-container {
     height: 40%;
     width: 75%;
     // background-color: gray;
@@ -153,11 +153,11 @@ button:hover {
     }
 
     
-    .scoreBox {
+    .score-box {
         width: 60%;
     }
 
-    .timerBox {
+    .timer-box {
         width: 60%;
         // margin-bottom: 5%;
     }
@@ -188,7 +188,7 @@ img {
     user-select: none;
 }
 
-.moleDiv {
+.mole-div {
     // width: 150px;
     // height: 130px;
     width: 62%;
@@ -201,7 +201,7 @@ img {
     visibility: hidden;
 }
 
-@keyframes scorePlusOne {
+@keyframes scoreplus-one {
     0% {
         opacity: 1;
         bottom: 0;
@@ -218,12 +218,12 @@ img {
 
 .score-animation {
     // position: absolute;
-    animation: scorePlusOne 0.3s linear;
+    animation: scoreplus-one 0.3s linear;
     // width: 50px;
     // height: 50px;
 }
 
-.scoreText {
+.score-text {
     position: absolute;
     // border: 2px solid red;
     width: 55px;
@@ -233,7 +233,7 @@ img {
     z-index: 20;
 }
 
-#plusOne {
+#plus-one {
     position: absolute;
     bottom: 0;
     opacity: 0;
@@ -242,20 +242,20 @@ img {
 }
 
 
-.dirtMound {
+.dirt-mound {
     width: 110%;
     height: 120%;
     position: absolute;
     // border: 2px solid red;
 }
 
-.itemSet {
+.item-set {
     position: absolute;
     width: 20%;
     height: 20%;
 }
 
-.itemSet1 {
+.item-set-1 {
     
     top: 14%;
     left: 9%;
@@ -263,7 +263,7 @@ img {
     
 }
 
-.itemSet2 {
+.item-set-2 {
     
     top: 27%;
     left: 31%;
@@ -271,7 +271,7 @@ img {
     
 }
 
-.itemSet3 {
+.item-set-3 {
     
     top: 45%;
     left: 50%;
@@ -279,7 +279,7 @@ img {
     
 }
 
-.itemSet4 {
+.item-set-4 {
     
     top: 63%; 
     left: 12%;
@@ -287,7 +287,7 @@ img {
     
 }
 
-.itemSet5 {
+.item-set-5 {
     
     top: 17%;
     right: 9%;
@@ -295,7 +295,7 @@ img {
     
 }
 
-.itemSet6 {
+.item-set-6 {
     
     bottom: 10%;
     right: 13%;
@@ -306,53 +306,53 @@ img {
 
 
 @media (min-width: 1600px) {
-    .moleDiv {
+    .mole-div {
         width: 75%;
         left: 20%;
     }
 
-    // .dirtMound {
+    // .dirt-mound {
     //     width: 120%;
     // }
 }
 
 @media (max-width: 1400px) {
-    .moleDiv {
+    .mole-div {
         width: 75%;
         left: 20%;
     }
 
-    .dirtMound {
+    .dirt-mound {
         width: 120%;
     }
 }
 
 @media (max-width: 1200px) {
-    .moleDiv {
+    .mole-div {
         width: 80%;
         // left: 20%;
     }
 
-    // .dirtMound {
+    // .dirt-mound {
     //     width: 120%;
     // }
 }
 
 
 @media (max-width: 1024px) {
-    .moleDiv {
+    .mole-div {
         width: 88%;
         left: 21%;
     }
 
-    .headerContent {
+    .header-content {
  
         width: 90%;
  
    
     }
 
-    // .dirtMound {
+    // .dirt-mound {
     //     width: 120%;
     // }
 }
@@ -368,46 +368,46 @@ img {
 }
 
 @media (max-width: 700px) {
-    .moleDiv {
+    .mole-div {
         width: 100%;
         left: 16%;
     }
 
-    .dirtMound {
+    .dirt-mound {
         width: 125%;
     }
 
-    .commandButtons {
+    .command-buttons {
         justify-content: flex-start;
         width: 30%;
     }
 
-    .scoreContainer {
-        .timerBox {
+    .score-container {
+        .timer-box {
             text-align: center;
         }
     }
 }
 
 // @media (max-width: 600px) {
-//     .moleDiv {
+//     .mole-div {
 //         width: 110%;
 //         left: 16%;
 //     }
 
-//     .dirtMound {
+//     .dirt-mound {
 //         width: 130%;
 //     }
 // }
 
 @media (max-width: 600px) {
 
-    .modalOverlay {
+    .modal-overlay {
         right: 10%;
         left: 10%;
     }
 
-    .titleContainer {
+    .title-container {
         width: 80%;
     }
 
@@ -420,34 +420,34 @@ img {
     }
     
     // header {
-    //     .commandButtons {
+    //     .command-buttons {
     //         width: 70%;
     //     }
     // }
 
-    .moleDiv {
+    .mole-div {
         // width: 100%;
         left: 14%;
     }
 
-    .dirtMound {
+    .dirt-mound {
         width: 120%;
     }
 
-    .itemSet {
+    .item-set {
         position: absolute;
         width: 30%;
         height: 20%;
         // border: 2px solid red;
     }
 
-    .itemSet1 {
+    .item-set-1 {
         top: 9%;
         left: 5%;
         
     }
 
-    .itemSet2 {
+    .item-set-2 {
         
         top: 32%;
         left: 29%;
@@ -455,7 +455,7 @@ img {
         
     }
 
-    .itemSet3 {
+    .item-set-3 {
         
         top: 51%;
         left: 62%;
@@ -463,7 +463,7 @@ img {
         
     }
 
-    .itemSet4 {
+    .item-set-4 {
         
         top: 62%; 
         left: 3%;
@@ -471,7 +471,7 @@ img {
         
     }
 
-    .itemSet5 {
+    .item-set-5 {
         
         top: 13%;
         right: 6%;
@@ -479,7 +479,7 @@ img {
         
     }
 
-    .itemSet6 {
+    .item-set-6 {
         
         bottom: 7%;
         right: 31%;
@@ -489,37 +489,37 @@ img {
 }
 
 @media (max-width: 500px) {
-    .headerContent {
+    .header-content {
         flex-direction: column;
         // justify-content: center;
         align-items: center;
 
     }
 
-    .scoreContainer {
+    .score-container {
         width: 100%;
     }
 
-    .commandButtons {
+    .command-buttons {
         width: 50%;
         // align-items: center;
         justify-content: center;
     }
 
-    .scoreText {
+    .score-text {
         top: 0;
         left: 46%;
     }
 }
 
 @media (max-width: 460px) {
-    .modalOverlay {
+    .modal-overlay {
         right: 5%;
         left: 5%;
         border-radius: 5px;
     }
 
-    .titleContainer {
+    .title-container {
         width: 90%;
     }
 
@@ -534,45 +534,45 @@ img {
 
 @media (max-width: 320px) {
 
-    .headerContent {
+    .header-content {
         width: 95%;
     }
 
-    // .scoreContainer {
+    // .score-container {
     //     h2 {
 
     //     }
     // }
     
     // header {
-    //     .commandButtons {
+    //     .command-buttons {
     //         width: 70%;
     //     }
     // }
 
-    .moleDiv {
+    .mole-div {
         width: 125%;
         left: 13%;
     }
 
-    .dirtMound {
+    .dirt-mound {
         width: 150%;
     }
 
-    .itemSet {
+    .item-set {
         position: absolute;
         width: 30%;
         height: 20%;
         // border: 2px solid red;
     }
 
-    .itemSet1 {
+    .item-set-1 {
         top: 11%;
         left: 8%;
         
     }
 
-    .itemSet2 {
+    .item-set-2 {
         
         top: 40%;
         left: 7%;
@@ -580,7 +580,7 @@ img {
         
     }
 
-    .itemSet3 {
+    .item-set-3 {
         top: 13%;
         right: 16%;
         left: initial;
@@ -589,7 +589,7 @@ img {
         
     }
 
-    .itemSet4 {
+    .item-set-4 {
         
         top: 68%; 
         left: 3%;
@@ -597,14 +597,14 @@ img {
         
     }
 
-    .itemSet5 {
+    .item-set-5 {
         top: 47%;
         left: 52%;
         right: initial;
         
     }
 
-    .itemSet6 {
+    .item-set-6 {
         
         bottom: 3%;
         right: 23%;
