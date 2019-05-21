@@ -1,14 +1,4 @@
 
-                // REFERENCES
-// reference used for the random function
-    // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Timeouts_and_intervals#Active_learning_a_reaction_game 
-
-// reference used for setting a delay in a loop
-    // https://stackoverflow.com/questions/3583724/how-do-i-add-a-delay-in-a-javascript-loop
-
-// timer created with assistance from David Thavixay
-
-
 const moleObj = [
     { active: false },
     { active: false },
@@ -66,7 +56,7 @@ function raise(i) {
     setTimeout(lower, random(1000, 1200), i);
 }
 
-
+// document ready
 $(function () {
 
     // init() will first generate a random number between 0-5. The loop with the counter 'j' is resetting the images back to it's original state before the next mole is called. A setTimeout is used to 'pause' time between moles being raised. The function calls itself again with a new random number out of the array.
@@ -82,7 +72,7 @@ $(function () {
                 alert("Game stopped! Press start to play again!");
                 return
             } else if ( seconds <= 0) {
-                alert("Time up!");
+                alert(`Time up! Final score: ${score}`);
                 clearInterval(countdown);
                 $('.start-button').css('display', 'block');
                 $('.quit-button').css('display', 'none');
@@ -104,9 +94,7 @@ $(function () {
         $('.quit-button').css('display', 'block');
     })
 
-
     // Quit Button
-    
     $('.quit-button').on("click", function () {
         quit = true;
         clearInterval(countdown);
@@ -128,3 +116,15 @@ $(function () {
     })
 });
     
+
+
+                // REFERENCES
+// reference used for the random function
+    // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Timeouts_and_intervals#Active_learning_a_reaction_game 
+
+// reference used for setting a delay in a loop
+    // https://stackoverflow.com/questions/3583724/how-do-i-add-a-delay-in-a-javascript-loop
+
+// timer created with assistance from David Thavixay
+
+// modal background created by https://www.heropatterns.com/

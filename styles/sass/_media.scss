@@ -1,3 +1,24 @@
+@media (min-width: 1800px) {
+    .command-buttons {
+        height: 60%;
+
+        button {
+            padding: 20px 45px;
+            font-size: 35px;
+        }
+    }
+
+    .score-container {
+        height: 60%;
+
+        h2,
+        #timer {
+            font-size: 60px;
+        }
+    }
+}
+
+
 @media (min-width: 1600px) {
     .mole-div {
         width: 75%;
