@@ -69,10 +69,22 @@ $(function () {
         setTimeout(function () {            
             raise(i);                        
             if (quit === true) {
-                alert("Game stopped! Press start to play again!");
+                Swal.fire({
+                    title: "Game stopped!",
+                    text: "Press start to play again!",
+                    type: "warning",
+                    background: "#D47D70",
+                    confirmButtonText: "Sweet!"
+                });
                 return
             } else if ( seconds <= 0) {
-                alert(`Time up! Final score: ${score}`);
+                Swal.fire({
+                    title: `Time up! Final score: ${score}`,
+                    text: `Press 'Start' to play again!`,
+                    type: "success",
+                    background: "#D47D70",
+                    confirmButtonText: "Got it!"
+                });
                 clearInterval(countdown);
                 $('.start-button').css('display', 'block');
                 $('.quit-button').css('display', 'none');
@@ -112,7 +124,14 @@ $(function () {
 
     $('.modal-overlay').on('click', function() {
         $('.start-overlay').css('display', 'none');
-        $('.start-overlay').css('display', 'none');
+        $('.modal-overlay').css('display', 'none');
+        Swal.fire({
+            title: `Instructions`,
+            text: `Press 'Start' to begin the game. Click on the moles that pop up to earn points!`,
+            type: "info",
+            background: "#D47D70",
+            confirmButtonText: "Got it!"
+        });
     })
 });
     
