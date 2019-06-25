@@ -122,6 +122,7 @@ $(function () {
         $('.container').css('cursor', 'url(assets/mallet-icon.png),auto');
     }) 
 
+    // Modal Overlay
     $('.modal-overlay').on('click', function() {
         $('.start-overlay').css('display', 'none');
         $('.modal-overlay').css('display', 'none');
